@@ -4,7 +4,7 @@ import BookingList from '../components/BookingList';
 
 function Bookings() {
   return (
-    <div>
+    <div style={{ padding: '20px' , display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h1>Book a Slot</h1>
       <BookingForm />
       {/* <BookingList /> */}

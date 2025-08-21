@@ -7,7 +7,7 @@ import TimeSlots from './pages/TimeSlots';
 function App() {
   return (
     <Router>
-      <nav>
+      <nav style={{ padding: '10px', background: '#f0f0f0', display: 'flex', justifyContent: 'center' }}>
         <Link to="/">Home</Link> | <Link to="/bookings">Bookings</Link> | <Link to="/slots">Time Slots</Link>
       </nav>
       <Routes>
