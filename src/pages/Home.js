@@ -1,5 +1,5 @@
 import React from 'react';
-import BoookingSignIn from '../components/BookingSignIn';
+import SignIn from '../components/SignIn';
 
 function Home() {
   return (
@@ -10,7 +10,7 @@ function Home() {
         <p>To get started, please sign in or create an account.</p>
       </div>
       <div style={{ marginTop: -200}}>
-        <BoookingSignIn/>
+        <SignIn/>
       </div>
     </div>
   )
