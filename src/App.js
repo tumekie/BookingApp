@@ -7,8 +7,10 @@ import TimeSlots from './pages/TimeSlots';
 function App() {
   return (
     <Router>
-      <nav style={{ padding: '10px', background: '#f0f0f0', display: 'flex', justifyContent: 'center' }}>
-        <Link to="/">Home</Link> | <Link to="/bookings">Bookings</Link> | <Link to="/slots">Time Slots</Link>
+      <nav style={{ padding: '10px', background: 'skyblue', display: 'flex', justifyContent: 'center', gap: '15px', color: 'white', fontWeight: 'bold' }}>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}>Home</Link> |
+        <Link to="/bookings" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Bookings</Link> |
+        <Link to="/slots" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Time Slots</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />

@@ -15,7 +15,7 @@ function TimeSlots() {
   };
 
   return (
-    <div>
+    <div style={{ padding: '20px' , display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h1>Available Time Slots</h1>
       <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
       <button onClick={fetchSlots}>Check</button>
