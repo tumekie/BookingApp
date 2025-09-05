@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../api/api';
+import background from '../assets/b6.jpg';
 
 function TimeSlots() {
   const [date, setDate] = useState('');
@@ -15,8 +16,8 @@ function TimeSlots() {
   };
 
   return (
-    <div style={{ padding: '20px' , display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h1>Available Time Slots</h1>
+    <div style={{ padding: '20px' , display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundImage: `url(${background})`, backgroundSize: 'cover', minHeight: '100vh' }}>
+      <h1 style={{ maxWidth: 600, textAlign: 'center', marginBottom: 20 }}>Available Time Slots</h1>
       <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
       <button onClick={fetchSlots}>Check</button>
       <ul>
