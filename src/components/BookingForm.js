@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import api from '../api/api';
+import background from '../assets/b5.jpg';
 
 function BookingForm() {
   const [bookedTimes, setBookedTimes] = useState([]);
@@ -61,7 +62,7 @@ function BookingForm() {
   };
 
   return (
-    <Card component="form" style={{ minWidth: 400, margin: 'auto', marginTop: 50, padding: 20 , display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Card component="form" style={{ maxWidth: 500, margin: 'auto', marginTop: 50, padding: 20 , display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
       <CardContent>
         <TextField
           type="date"

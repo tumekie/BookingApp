@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import api from '../api/api';
 import Register from './Register';
+import background from '../assets/b5.jpg';
 function SignIn() {
   const [passwordError, setPasswordError] = useState([]);
   const [emailError, setEmailError] = useState('');
@@ -47,7 +48,7 @@ function SignIn() {
   };
 
   return (
-    <Card component="form" style={{ minWidth: 400, margin: 'auto', marginTop: 200, padding: 20 , borderRadius: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Card component="form" style={{ maxWidth: 500, margin: 'auto', marginTop: 200, padding: 20 , borderRadius: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundImage: `url(${background})`, backgroundSize: 'cover' }}>
       <CardContent>
         <h2 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>Sign In</h2>
         <TextField
