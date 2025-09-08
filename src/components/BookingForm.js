@@ -64,6 +64,7 @@ function BookingForm() {
   return (
     <Card component="form" style={{ maxWidth: 500, margin: 'auto', marginTop: 50, padding: 20 , display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
       <CardContent>
+        <h2 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>Book a Time Slot</h2>
         <TextField
           type="date"
           name="date"
