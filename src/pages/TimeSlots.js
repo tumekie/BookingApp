@@ -17,14 +17,17 @@ function TimeSlots() {
 
   return (
     <div style={{ padding: '20px' , display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundImage: `url(${background})`, backgroundSize: 'cover', minHeight: '100vh' }}>
-      <h1 style={{ maxWidth: 600, textAlign: 'center', marginBottom: 20 }}>Available Time Slots</h1>
-      <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-      <button onClick={fetchSlots}>Check</button>
-      <ul>
-        {slots.map(slot => (
-          <li key={slot.id}>{slot.time}</li>
-        ))}
-      </ul>
+      <h1 style={{ maxWidth: 600, textAlign: 'center'}}>Available Time Slots</h1>
+      <div style={{ maxWidth: 600, textAlign: 'center' }}>
+        <p>Select a date to view available time slots for booking. Available slots will be displayed below once you check.</p>
+        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+        <button onClick={fetchSlots}>Check</button>
+        <ul>
+          {slots.map(slot => (
+            <li key={slot.id}>{slot.time}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
