@@ -7,6 +7,10 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import api from '../api/api';
 import background from '../assets/b5.jpg';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import dayjs from 'dayjs';
 
 function BookingForm() {
   const [bookedTimes, setBookedTimes] = useState([]);
@@ -65,20 +69,25 @@ function BookingForm() {
     <Card component="form" style={{ maxWidth: 500, margin: 'auto', marginTop: 50, padding: 20 , display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
       <CardContent>
         <h2 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>Book a Time Slot</h2>
-        <TextField
-          type="date"
-          name="date"
-          value={form.date}
-          onChange={handleChange}
-          label="Date"
-          InputLabelProps={{ shrink: true }}
-          fullWidth
-          required
-          style={{ marginBottom: 20 }}
-          inputProps={{
-            min: new Date().toISOString().split("T")[0], // restrict past dates
-          }}
-        />
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker
+            label="Date"
+            value={form.date ? dayjs(form.date) : null}
+            onChange={(newValue) => {
+              handleChange({
+                target: { name: 'date', value: newValue ? newValue.format('YYYY-MM-DD') : '' },
+              });
+            }}
+            slotProps={{
+              textField: {
+                fullWidth: true,
+                required: true,
+                style: { marginBottom: 20 },
+              },
+            }}
+            minDate={dayjs()} // restrict past dates
+          />
+        </LocalizationProvider>
         <TextField
           select
           name="time"
